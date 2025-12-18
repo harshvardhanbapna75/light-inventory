@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Final Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            width: 420px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        p {
+            margin: 8px 0;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 12px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Final Selection</h2>
+
+    <p><b>Product:</b> {{ product }}</p>
+    <p><b>Wattage:</b> {{ wattage }}</p>
+    <p><b>Body Color:</b> {{ body_color }}</p>
+    <p><b>Cup / Inner Type:</b> {{ cup_type }}</p>
+    <p><b>Light Color:</b> {{ light_color }}</p>
+
+    <form method="POST" action="/save_stock">
+
+        <!-- 🔴 DO NOT REMOVE THESE -->
+        <input type="hidden" name="product" value="{{ product }}">
+        <input type="hidden" name="wattage" value="{{ wattage }}">
+        <input type="hidden" name="body_color" value="{{ body_color }}">
+        <input type="hidden" name="cup_type" value="{{ cup_type }}">
+        <input type="hidden" name="light_color" value="{{ light_color }}">
+
+        <label><b>Stock Available:</b></label>
+        <input type="number" name="stock" value="{{ stock }}" min="0" required>
+
+        <button type="submit">Save Stock</button>
+    </form>
+
+    <a href="/">Start Again</a>
+</div>
+
+</body>
+</html>

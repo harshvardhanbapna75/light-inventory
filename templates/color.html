@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Body Color</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        .box {
+            width: 420px;
+            text-align: center;
+        }
+        button {
+            width: 48%;
+            padding: 14px;
+            margin: 8px 1%;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Choose Body Color</h2>
+
+    <form method="POST" action="/color">
+
+        <!-- IMPORTANT: carry forward previous data -->
+        <input type="hidden" name="product" value="{{ product }}">
+        <input type="hidden" name="wattage" value="{{ wattage }}">
+
+        <button type="submit" name="body_color" value="Black">Black</button>
+        <button type="submit" name="body_color" value="White">White</button>
+        <button type="submit" name="body_color" value="Copper">Copper</button>
+        <button type="submit" name="body_color" value="Rose Gold">Rose Gold</button>
+
+    </form>
+</div>
+
+</body>
+</html>
+

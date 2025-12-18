@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Light Color</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        .box {
+            width: 420px;
+            text-align: center;
+        }
+        button {
+            width: 48%;
+            padding: 14px;
+            margin: 8px 1%;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Choose Light Color Type</h2>
+
+    <form method="POST" action="/summary">
+
+        <!-- carry forward -->
+        <input type="hidden" name="product" value="{{ product }}">
+        <input type="hidden" name="wattage" value="{{ wattage }}">
+        <input type="hidden" name="body_color" value="{{ body_color }}">
+        <input type="hidden" name="cup_type" value="{{ cup_type }}">
+
+        <button type="submit" name="light_color" value="3K">3K</button>
+        <button type="submit" name="light_color" value="4K">4K</button>
+        <button type="submit" name="light_color" value="5K">5K</button>
+        <button type="submit" name="light_color" value="6K">6K</button>
+        <button type="submit" name="light_color" value="RGB">RGB</button>
+        <button type="submit" name="light_color" value="3 in 1">3 in 1</button>
+        <button type="submit" name="light_color" value="CCT">CCT</button>
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Cup / Inner Type</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        .box {
+            width: 420px;
+            text-align: center;
+        }
+        button {
+            width: 48%;
+            padding: 14px;
+            margin: 8px 1%;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Choose Cup / Inner Type</h2>
+
+    <form method="POST" action="/cup">
+
+        <!-- carry forward -->
+        <input type="hidden" name="product" value="{{ product }}">
+        <input type="hidden" name="wattage" value="{{ wattage }}">
+        <input type="hidden" name="body_color" value="{{ body_color }}">
+
+        <button type="submit" name="cup_type" value="Black">Black</button>
+        <button type="submit" name="cup_type" value="White">White</button>
+        <button type="submit" name="cup_type" value="Copper">Copper</button>
+        <button type="submit" name="cup_type" value="Rose Gold">Rose Gold</button>
+        <button type="submit" name="cup_type" value="Matt Black">Matt Black</button>
+        <button type="submit" name="cup_type" value="Gun Black">Gun Black</button>
+
+    </form>
+</div>
+
+</body>
+</html>
